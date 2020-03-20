@@ -10,7 +10,7 @@
     <title>Freelancer - Start Bootstrap Theme</title>
 
     <!-- Custom fonts for this theme -->
-    <link href={{asset('css/fontawesome-free/csss/all.min.css')}} rel="stylesheet" type="text/css">
+    <link href="asset/css/fontawesome-free/csss/all.min.css" rel="stylesheet" type="text/css">
     <link href={{asset("https://fonts.googleapis.com/css?family=Montserrat:400,700")}} rel="stylesheet" type="text/css">
     <link href={{asset("https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic")}} rel="stylesheet" type="text/css">
 
