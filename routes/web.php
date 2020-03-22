@@ -13,4 +13,4 @@ Route::get("dang-nhap","WebController@login");
 Route::get("/","WebController@home");
 
 //day la trang san pham
-Route::get("ngoi-nha","ProductController@house");
+Route::get("product1","ProductController@house");

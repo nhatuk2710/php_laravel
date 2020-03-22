@@ -11,8 +11,8 @@
 
     <!-- Custom fonts for this theme -->
     <link href={{asset('css/fontawesome-free/csss/all.min.css')}} rel="stylesheet" type="text/css">
-    <link href={{asset("https://fonts.googleapis.com/css?family=Montserrat:400,700")}} rel="stylesheet" type="text/css">
-    <link href={{asset("https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic")}} rel="stylesheet" type="text/css">
+    <link href={{asset("http://fonts.googleapis.com/css?family=Montserrat:400,700")}} rel="stylesheet" type="text/css">
+    <link href={{asset("http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic")}} rel="stylesheet" type="text/css">
 
     <!-- Theme CSS -->
     <link href={{asset('css/freelancer.min.css')}} rel="stylesheet">
@@ -100,12 +100,14 @@
                             </div>
                         </div>
                     </div>
-                    <img class="img-fluid" src={{asset('img/portfolio/cabin.png')}} alt="">
+                    <img class="img-fluid" src={{asset('img/portfolio/lmh.jpg')}} alt="">
 {{--                    <img class="img-fluid" src={{$p['image']}}>--}}
                 </div>
-                <h2 class="text-center">{{$p['name']}}</h2>
-                <h3 class="text-center">Price :{{$p['price']}}</h3>
-            </div>
+                <div class="product-info">
+                    <h2 class="text-center">{{$p->product_name}}</h2>
+                    <h3 class="text-center">Price :{{$p->price}}</h3>
+                </div>
+                </div>
             @endforeach
 
             <!-- Portfolio Item 2 -->
