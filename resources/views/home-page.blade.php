@@ -86,7 +86,11 @@
         </div>
 
         <div class="row">
-            @foreach($product as $p)
+            <div class="tile text-center col-lg-12">
+                <h2>Sản phẩm đắt nhất</h2>
+            </div>
+            @foreach($max_price as $p)
+
             <!-- Portfolio Item 1 -->
             <div class="col-md-6 col-lg-4">
                 <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
@@ -108,6 +112,61 @@
                     <h3 class="text-center">Price :{{$p->price}}</h3>
                 </div>
                 </div>
+            @endforeach
+                <div class="tile text-center col-lg-12">
+                    <h2>Sản phẩm mới nhất</h2>
+                </div>
+            @foreach($newests as $d)
+
+                <!-- Portfolio Item 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white">
+                                    <i class="fas fa-plus fa-3x"></i>
+                                    <div class="btn btn-xl btn-outline-light">
+                                        <i class="fas fa-times fa-fw">
+                                            Add to cart
+                                        </i>
+                                    </div>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src={{asset('img/portfolio/lmh.jpg')}} alt="">
+                            {{--                    <img class="img-fluid" src={{$p['image']}}>--}}
+                        </div>
+                        <div class="product-info">
+                                                <h2 class="text-center">{{$d->product_name}}</h2>
+                            <h3 class="text-center">Price :{{$d->price}}</h3>
+                        </div>
+                    </div>
+
+@endforeach
+            <div class="tile text-center col-lg-12">
+                <h2>Sản phẩm rẻ nhất</h2>
+            </div>
+            @foreach($min_price as $n)
+
+                <!-- Portfolio Item 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white">
+                                    <i class="fas fa-plus fa-3x"></i>
+                                    <div class="btn btn-xl btn-outline-light">
+                                        <i class="fas fa-times fa-fw">
+                                            Add to cart
+                                        </i>
+                                    </div>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src={{asset('img/portfolio/lmh.jpg')}} alt="">
+{{--                                                <img class="img-fluid" src={{$p['image']}}>--}}
+                        </div>
+                        <div class="product-info">
+                            <h2 class="text-center">{{$n->product_name}}</h2>
+                            <h3 class="text-center">Price :{{$n->price}}</h3>
+                        </div>
+                    </div>
             @endforeach
 
             <!-- Portfolio Item 2 -->
