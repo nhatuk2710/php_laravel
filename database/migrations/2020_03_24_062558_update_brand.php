@@ -26,7 +26,7 @@ class UpdateBrand extends Migration
     public function down()
     {
         Schema::table('brand', function (Blueprint $table) {
-            //
+            $table->dropColumn('brand_desc');
         });
     }
 }
