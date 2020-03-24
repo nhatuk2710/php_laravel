@@ -24,7 +24,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Shoping Mall</a>
+        <a class="navbar-brand js-scroll-trigger" href="{{url("/")}}">Shoping Mall</a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
             <i class="fas fa-bars"></i>
@@ -35,19 +35,40 @@
                     <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Product</a>
                 </li>
                 <li class="nav-item mx-0 mx-lg-1">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">List</a>
                 </li>
                 <li class="nav-item mx-0 mx-lg-1">
                     <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Register</a>
+                </li>
+
+                <li class="nav-item dropdown mx-0 mx-lg-1">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Menu Product
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item py-3 px-0 px-lg-3 rounded js-scroll-trigger text-center" href="{{url("/list")}}">Product</a>
+                        <a class="dropdown-item py-3 px-0 px-lg-3 rounded js-scroll-trigger text-center" href="#">Detail produt</a>
+                        <a class="dropdown-item py-3 px-0 px-lg-3 rounded js-scroll-trigger text-center" href="{{url("/dang-nhap/")}}">Login here</a>
+                    </div>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+{{--<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top">--}}
+{{--    <div class="container">--}}
+{{--        <div class="collapse navbar-collapse">--}}
+{{--            <ul class="navbar-nav ml-auto">--}}
+{{--                <a>đâsd</a>--}}
+{{--            </ul>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</nav>--}}
 
 <!-- Masthead -->
 <header class="masthead bg-primary text-white text-center">
     <div class="container d-flex align-items-center flex-column">
+
 
         <!-- Masthead Avatar Image -->
         <img class="masthead-avatar mb-5" src={{asset("img/avataaars.svg")}} alt="">
@@ -99,7 +120,7 @@
                             <i class="fas fa-plus fa-3x"></i>
                             <div class="btn btn-xl btn-outline-light">
                                 <i class="fas fa-times fa-fw">
-                                    Add to cart
+                                    View detail
                                 </i>
                             </div>
                         </div>
@@ -110,6 +131,9 @@
                 <div class="product-info">
                     <h2 class="text-center">{{$p->product_name}}</h2>
                     <h3 class="text-center">Price :{{$p->price}}</h3>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-xl col-lg-12 col-md-12" id="sendMessageButton">Add to Cart</button>
                 </div>
                 </div>
             @endforeach
@@ -126,7 +150,7 @@
                                     <i class="fas fa-plus fa-3x"></i>
                                     <div class="btn btn-xl btn-outline-light">
                                         <i class="fas fa-times fa-fw">
-                                            Add to cart
+                                            View detail
                                         </i>
                                     </div>
                                 </div>
@@ -138,9 +162,11 @@
                                                 <h2 class="text-center">{{$d->product_name}}</h2>
                             <h3 class="text-center">Price :{{$d->price}}</h3>
                         </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-xl col-lg-12 col-md-12" id="sendMessageButton">Add to Cart</button>
+                        </div>
                     </div>
-
-@endforeach
+            @endforeach
             <div class="tile text-center col-lg-12">
                 <h2>Sản phẩm rẻ nhất</h2>
             </div>
@@ -154,7 +180,7 @@
                                     <i class="fas fa-plus fa-3x"></i>
                                     <div class="btn btn-xl btn-outline-light">
                                         <i class="fas fa-times fa-fw">
-                                            Add to cart
+                                            View detail
                                         </i>
                                     </div>
                                 </div>
@@ -165,6 +191,10 @@
                         <div class="product-info">
                             <h2 class="text-center">{{$n->product_name}}</h2>
                             <h3 class="text-center">Price :{{$n->price}}</h3>
+                            <h3 class="text-center"> {{$n->garelly}}</h3>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-xl col-lg-12 col-md-12" id="sendMessageButton">Add to Cart</button>
                         </div>
                     </div>
             @endforeach
@@ -275,7 +305,7 @@
     <div class="container">
 
         <!-- About Section Heading -->
-        <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
+        <h2 class="page-section-heading text-center text-uppercase text-white">Infomation</h2>
 
         <!-- Icon Divider -->
         <div class="divider-custom divider-light">
@@ -295,7 +325,6 @@
                 <p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p>
             </div>
         </div>
-
         <!-- About Section Button -->
         <div class="text-center mt-4">
             <a class="btn btn-xl btn-outline-light" href="http://localhost:81/phppj/public/dang-nhap">
@@ -453,6 +482,7 @@
                             <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil,
                                 molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta,
                                 eos quod consequuntur itaque. Nam.</p>
+
                             <button class="btn btn-primary" href="#" data-dismiss="modal">
                                 <i class="fas fa-times fa-fw"></i>
                                 Close Window

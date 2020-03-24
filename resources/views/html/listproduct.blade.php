@@ -1,7 +1,6 @@
 @extends('layout')
 
 @section('pr')
-
     <section class="page-section portfolio" id="portfolio">
         <div class="container">
 
@@ -18,9 +17,9 @@
 
             <div class="row">
                 <div class="tile text-center col-lg-12">
-                    <h2>chi tiet san pham/h2>
+                    <h2>Danh sách sản phẩm theo danh muc</h2>
                 </div>
-            @foreach($product as $p)
+            @foreach(\App\Category::all() as $c)
 
                 <!-- Portfolio Item 1 -->
                     <div class="col-md-6 col-lg-4">
@@ -28,10 +27,8 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white">
                                     <i class="fas fa-plus fa-3x"></i>
-                                    <div class="btn btn-xl btn-outline-light">
-                                        <i class="fas fa-times fa-fw">
-                                            Add to cart
-                                        </i>
+                                    <div class="btn btn-xl btn-group-lg">
+                                        <button type="button" href="" class="btn btn-secondary">Secondary</button>
                                     </div>
                                 </div>
                             </div>
@@ -39,15 +36,12 @@
                             {{--                    <img class="img-fluid" src={{$p['image']}}>--}}
                         </div>
                         <div class="product-info">
-                            <h2 class="text-center">{{$p->product_name}}</h2>
-                            <h3 class="text-center">Price :{{$p->price}}</h3>
+                            <h2 class="text-center">{{$c->category_name}}</h2>
+{{--                            <h3 class="text-center">Price :{{$c->price}}</h3>--}}
                         </div>
                     </div>
-    @endforeach
+                @endforeach
             </div>
-        </div>
-        <div class="container">
-
         </div>
     </section>
 @endsection

@@ -24,7 +24,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Shoping Mall</a>
+        <a class="navbar-brand js-scroll-trigger" href="{{url("/")}}">Shoping Mall</a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
             <i class="fas fa-bars"></i>
@@ -39,6 +39,18 @@
                 </li>
                 <li class="nav-item mx-0 mx-lg-1">
                     <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Register</a>
+                </li>
+                <li class="nav-item dropdown mx-0 mx-lg-1">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Menu Product
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            @foreach(\App\Category::all() as $c)
+                            <a class="dropdown-item py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{url("/list-product/{$c->id}")}}">{{$c->category_name}}</a>
+                            @endforeach
+                        <a class="dropdown-item py-3 px-0 px-lg-3 rounded js-scroll-trigger text-center" href="#">Detail produt</a>
+                        <a class="dropdown-item py-3 px-0 px-lg-3 rounded js-scroll-trigger text-center" href="#">Login here</a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -77,10 +89,10 @@
         <!-- Portfolio Section Heading -->
 
         <!-- /.row -->
-
+        @yield('pr')
     </div>
 </section>
-@yield('pr')
+
 <!-- About Section -->
 <section class="page-section bg-primary text-white mb-0" id="about">
     <div class="container">
