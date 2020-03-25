@@ -1,500 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <title>Dealers &mdash; Colorlib e-Commerce Template</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>Freelancer - Start Bootstrap Theme</title>
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
+    <link rel="stylesheet" href={{asset("fonts/icomoon/style.css")}}>
 
-    <!-- Custom fonts for this theme -->
-    <link href={{asset('css/fontawesome-free/csss/all.min.css')}} rel="stylesheet" type="text/css">
-    <link href={{asset("https://fonts.googleapis.com/css?family=Montserrat:400,700")}} rel="stylesheet" type="text/css">
-    <link href={{asset("https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic")}} rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href={{asset("css/bootstrap.min.css")}}>
+    <link rel="stylesheet" href={{asset("css/magnific-popup.css")}}>
+    <link rel="stylesheet" href={{asset("css/jquery-ui.css")}}>
+    <link rel="stylesheet" href={{asset("css/owl.carousel.min.css")}}>
+    <link rel="stylesheet" href={{("css/owl.theme.default.min.css")}}>
 
-    <!-- Theme CSS -->
-    <link href={{asset('css/freelancer.min.css')}} rel="stylesheet">
+
+    <link rel="stylesheet" href={{asset("css/aos.css")}}>
+
+    <link rel="stylesheet" href={{asset("css/style.css")}}>
+
 
 </head>
+<body>
 
-<body id="page-top">
+<div class="site-wrap">
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-    <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="{{url("/")}}">Shoping Mall</a>
-        <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            Menu
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item mx-0 mx-lg-1">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Product</a>
-                </li>
-                <li class="nav-item mx-0 mx-lg-1">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
-                </li>
-                <li class="nav-item mx-0 mx-lg-1">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Register</a>
-                </li>
-                <li class="nav-item dropdown mx-0 mx-lg-1">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Menu Product
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            @foreach(\App\Category::all() as $c)
-                            <a class="dropdown-item py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{url("/list-product/{$c->id}")}}">{{$c->category_name}}</a>
-                            @endforeach
-                        <a class="dropdown-item py-3 px-0 px-lg-3 rounded js-scroll-trigger text-center" href="#">Detail produt</a>
-                        <a class="dropdown-item py-3 px-0 px-lg-3 rounded js-scroll-trigger text-center" href="#">Login here</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
 
-<!-- Masthead -->
-<header class="masthead bg-primary text-white text-center">
-    <div class="container d-flex align-items-center flex-column">
+    <div class="site-navbar bg-white py-2">
 
-        <!-- Masthead Avatar Image -->
-        <img class="masthead-avatar mb-5" src={{asset("img/avataaars.svg")}} alt="">
-
-        <!-- Masthead Heading -->
-        <h1 class="masthead-heading mb-0">NhatHoang De</h1>
-
-        <!-- Icon Divider -->
-        <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon">
-                <i class="fas fa-star"></i>
-            </div>
-            <div class="divider-custom-line"></div>
-        </div>
-
-        <!-- Masthead Subheading -->
-        <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
-
-    </div>
-</header>
-
-<!-- Portfolio Section -->
-<section class="page-section portfolio" id="portfolio">
-    <div class="container">
-
-        <!-- Portfolio Section Heading -->
-
-        <!-- /.row -->
-        @yield('pr')
-    </div>
-</section>
-
-<!-- About Section -->
-<section class="page-section bg-primary text-white mb-0" id="about">
-    <div class="container">
-
-        <!-- About Section Heading -->
-        <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
-
-        <!-- Icon Divider -->
-        <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon">
-                <i class="fas fa-star"></i>
-            </div>
-            <div class="divider-custom-line"></div>
-        </div>
-
-        <!-- About Section Content -->
-        <div class="row">
-            <div class="col-lg-4 ml-auto">
-                <p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p>
-            </div>
-            <div class="col-lg-4 mr-auto">
-                <p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p>
-            </div>
-        </div>
-
-        <!-- About Section Button -->
-        <div class="text-center mt-4">
-            <a class="btn btn-xl btn-outline-light" href="http://localhost:81/phppj/public/dang-nhap">
-                <i class="fas fa-download mr-2"></i>
-                Login
-            </a>
-        </div>
-
-    </div>
-</section>
-
-<!-- Contact Section -->
-<section class="page-section" id="contact">
-    <div class="container">
-
-        <!-- Contact Section Heading -->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Register</h2>
-
-        <!-- Icon Divider -->
-        <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon">
-                <i class="fas fa-star"></i>
-            </div>
-            <div class="divider-custom-line"></div>
-        </div>
-
-        <!-- Contact Section Form -->
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                    <div class="control-group">
-                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                            <label>Name</label>
-                            <input class="form-control" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name.">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                            <label>Email Address</label>
-                            <input class="form-control" id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address.">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                            <label>Phone Number</label>
-                            <input class="form-control" id="phone" type="tel" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number.">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                            <label>Message</label>
-                            <textarea class="form-control" id="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."></textarea>
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <br>
-                    <div id="success"></div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Send</button>
-                    </div>
+        <div class="search-wrap">
+            <div class="container">
+                <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
+                <form action="#" method="post">
+                    <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
                 </form>
             </div>
         </div>
 
-    </div>
-</section>
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="logo">
+                    <div class="site-logo">
+                        <a href="index.html" class="js-logo-clone">Nhat Hoang</a>
+                    </div>
+                </div>
+                <div class="main-nav d-none d-lg-block">
+                    <nav class="site-navigation text-right text-md-center" role="navigation">
+                        <ul class="site-menu js-clone-nav d-none d-lg-block">
+                            <li class="has-children active">
+                                <a href="index.html">Collection</a>
+                                <ul class="dropdown">
+                                    @foreach(\App\Category::take(1)->get() as $y)
+                                    <li><a href="{{url("/cate/{$y->id}")}}">Men</a></li>
+                                    @endforeach
+                                    <li><a href="#">Women</a></li>
+                                    <li><a href="#">Children</a></li>
+                                    <li class="has-children">
+                                        <a href="#">Local Brand</a>
+                                        <ul class="dropdown">
+                                            @foreach(\App\Brand::take(1)->get() as $r)
+                                            <li><a href="{{url("/brandpr/{$r->id}")}}">Aptamil</a></li>
+                                            @endforeach
+                                            <li><a href="#">Ensure</a></li>
+                                            <li><a href="#">Beta</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
 
-<!-- Footer -->
-<footer class="footer text-center">
-    <div class="container">
-        <div class="row">
-
-            <!-- Footer Location -->
-            <div class="col-lg-4 mb-5 mb-lg-0">
-                <h4 class="text-uppercase mb-4">Location</h4>
-                <p class="lead mb-0">2215 John Daniel Drive
-                    <br>Clark, MO 65243</p>
+                            <li><a href="{{url("/listproduct")}}">Shop</a></li>
+                            <li><a href="#">Catalogs</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="icons">
+                    <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
+                    <a href="#" class="icons-btn d-inline-block"><span class="icon-heart-o"></span></a>
+                    <a href="html/cart.html" class="icons-btn d-inline-block bag">
+                        <span class="icon-shopping-bag"></span>
+                        <span class="number">2</span>
+                    </a>
+                    <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
+                </div>
             </div>
-
-            <!-- Footer Social Icons -->
-            <div class="col-lg-4 mb-5 mb-lg-0">
-                <h4 class="text-uppercase mb-4">Around the Web</h4>
-                <a class="btn btn-outline-light btn-social mx-1" href="#">
-                    <i class="fab fa-fw fa-facebook-f"></i>
-                </a>
-                <a class="btn btn-outline-light btn-social mx-1" href="#">
-                    <i class="fab fa-fw fa-twitter"></i>
-                </a>
-                <a class="btn btn-outline-light btn-social mx-1" href="#">
-                    <i class="fab fa-fw fa-linkedin-in"></i>
-                </a>
-                <a class="btn btn-outline-light btn-social mx-1" href="#">
-                    <i class="fab fa-fw fa-dribbble"></i>
-                </a>
-            </div>
-
-            <!-- Footer About Text -->
-            <div class="col-lg-4">
-                <h4 class="text-uppercase mb-4">About Freelancer</h4>
-                <p class="lead mb-0">Freelance is a free to use, MIT licensed Bootstrap theme created by
-                    <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
-            </div>
-
         </div>
     </div>
-</footer>
 
-<!-- Copyright Section -->
-<section class="copyright py-4 text-center text-white">
-    <div class="container">
-        <small>Copyright &copy; Your Website 2019</small>
+    <div class="site-blocks-cover" data-aos="fade">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 text-center">
+                    <div class="featured-hero-product w-100">
+                        <h1 class="mb-2">Nhathoang De</h1>
+                        <h4>Delivery Shop</h4>
+                        <div class="price mt-3 mb-5"><strong>Good service</strong> <del>Bad service</del></div>
+                        <p><a href="#" class="btn btn-outline-primary rounded-0">Buy now</a> <a href="#" class="btn btn-primary rounded-0">Buy Now</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-7 align-self-end text-center text-lg-right">
+                    <img src="images/new/person_transparent.png" alt="Image" class="img-fluid img-1">
+                </div>
+
+            </div>
+        </div>
+
     </div>
-</section>
 
-<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-<div class="scroll-to-top d-lg-none position-fixed ">
-    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
-        <i class="fa fa-chevron-up"></i>
-    </a>
-</div>
 
-<!-- Portfolio Modals -->
+    <div class="products-wrap border-top-0">
+        <div class="container-fluid">
+           @yield('product')
+        </div>
+    </div>
 
-<!-- Portfolio Modal 1 -->
-<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-            </button>
-            <div class="modal-body text-center">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <!-- Portfolio Modal - Title -->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
-                            <!-- Icon Divider -->
-                            <div class="divider-custom">
-                                <div class="divider-custom-line"></div>
-                                <div class="divider-custom-icon">
-                                    <i class="fas fa-star"></i>
+    <div class="site-blocks-cover inner-page py-5"  data-aos="fade">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 ml-auto order-lg-2 align-self-start">
+                    <div class="site-block-cover-content">
+                        <h2 class="sub-title">#New Summer Collection 2019</h2>
+                        <h1>Jacket</h1>
+                        <p><a href="#" class="btn btn-black rounded-0">Shop Now</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-8 order-1 align-self-end">
+                    <img src="images/model_woman_1.png" alt="Image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-section">
+        <div class="container">
+            <div class="row">
+                <div class="title-section text-center col-12">
+                    <h2 class="text-uppercase">Collections</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 block-3 products-wrap">
+                    <div class="nonloop-block-3 owl-carousel">
+
+                        <div class="product">
+                            <a href="#" class="item">
+                                <img src="images/product_1.jpg" alt="Image" class="img-fluid">
+                                <div class="item-info">
+                                    <h3>The Shoe</h3>
+                                    <span class="collection d-block">Summer Collection</span>
+                                    <strong class="price">$9.50</strong>
                                 </div>
-                                <div class="divider-custom-line"></div>
-                            </div>
-                            <!-- Portfolio Modal - Image -->
-                            <img class="img-fluid rounded mb-5" src={{asset("img/portfolio/cabin.png")}} alt="">
-                            <!-- Portfolio Modal - Text -->
-                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            <button class="btn btn-primary" href="#" data-dismiss="modal">
-                                <i class="fas fa-times fa-fw"></i>
-                                Close Window
-                            </button>
+                            </a>
                         </div>
+
+                        <div class="product">
+                            <a href="#" class="item">
+                                <span class="tag">Sale</span>
+                                <img src="images/product_2.jpg" alt="Image" class="img-fluid">
+                                <div class="item-info">
+                                    <h3>Marc Jacobs Bag</h3>
+                                    <span class="collection d-block">Summer Collection</span>
+                                    <strong class="price">$9.50 <del>$30.00</del></strong>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="product">
+                            <a href="#" class="item">
+                                <img src="images/product_3.jpg" alt="Image" class="img-fluid">
+                                <div class="item-info">
+                                    <h3>The  Belt</h3>
+                                    <span class="collection d-block">Summer Collection</span>
+                                    <strong class="price">$9.50</strong>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="product">
+                            <a href="#" class="item">
+                                <img src="images/product_1.jpg" alt="Image" class="img-fluid">
+                                <div class="item-info">
+                                    <h3>The Shoe</h3>
+                                    <span class="collection d-block">Summer Collection</span>
+                                    <strong class="price">$9.50</strong>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="product">
+                            <a href="#" class="item">
+                                <span class="tag">Sale</span>
+                                <img src="images/product_2.jpg" alt="Image" class="img-fluid">
+                                <div class="item-info">
+                                    <h3>Marc Jacobs Bag</h3>
+                                    <span class="collection d-block">Summer Collection</span>
+                                    <strong class="price">$9.50 <del>$30.00</del></strong>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="product">
+                            <a href="#" class="item">
+                                <img src="images/product_3.jpg" alt="Image" class="img-fluid">
+                                <div class="item-info">
+                                    <h3>The  Belt</h3>
+                                    <span class="collection d-block">Summer Collection</span>
+                                    <strong class="price">$9.50</strong>
+                                </div>
+                            </a>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Portfolio Modal 2 -->
-<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-            </button>
-            <div class="modal-body text-center">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <!-- Portfolio Modal - Title -->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Tasty Cake</h2>
-                            <!-- Icon Divider -->
-                            <div class="divider-custom">
-                                <div class="divider-custom-line"></div>
-                                <div class="divider-custom-icon">
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="divider-custom-line"></div>
-                            </div>
-                            <!-- Portfolio Modal - Image -->
-                            <img class="img-fluid rounded mb-5" src={{asset("img/portfolio/cake.png")}} alt="">
-                            <!-- Portfolio Modal - Text -->
-                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            <button class="btn btn-primary" href="#" data-dismiss="modal">
-                                <i class="fas fa-times fa-fw"></i>
-                                Close Window
-                            </button>
-                        </div>
+
+    <div class="site-blocks-cover inner-page py-5"  data-aos="fade">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 ml-auto order-lg-2 align-self-start">
+                    <div class="site-block-cover-content">
+                        <h2 class="sub-title">#New Summer Collection 2019</h2>
+                        <h1>New Denim Coat</h1>
+                        <p><a href="#" class="btn btn-black rounded-0">Shop Now</a></p>
                     </div>
+                </div>
+                <div class="col-lg-6 order-1 align-self-end">
+                    <img src="images/model_5.png" alt="Image" class="img-fluid">
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Portfolio Modal 3 -->
-<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-            </button>
-            <div class="modal-body text-center">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <!-- Portfolio Modal - Title -->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Circus Tent</h2>
-                            <!-- Icon Divider -->
-                            <div class="divider-custom">
-                                <div class="divider-custom-line"></div>
-                                <div class="divider-custom-icon">
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="divider-custom-line"></div>
+    <footer class="site-footer custom-border-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+
+                    <div class="block-7">
+                        <h3 class="footer-heading mb-4">About Us</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius quae reiciendis distinctio voluptates sed dolorum excepturi iure eaque, aut unde.</p>
+                    </div>
+                    <div class="block-7">
+                        <form action="#" method="post">
+                            <label for="email_subscribe" class="footer-heading">Subscribe</label>
+                            <div class="form-group">
+                                <input type="text" class="form-control py-4" id="email_subscribe" placeholder="Email">
+                                <input type="submit" class="btn btn-sm btn-primary" value="Send">
                             </div>
-                            <!-- Portfolio Modal - Image -->
-                            <img class="img-fluid rounded mb-5" src={{asset("img/portfolio/circus.png")}} alt="">
-                            <!-- Portfolio Modal - Text -->
-                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            <button class="btn btn-primary" href="#" data-dismiss="modal">
-                                <i class="fas fa-times fa-fw"></i>
-                                Close Window
-                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5 ml-auto mb-5 mb-lg-0">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="footer-heading mb-4">Quick Links</h3>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Sell online</a></li>
+                                <li><a href="#">Features</a></li>
+                                <li><a href="#">Shopping cart</a></li>
+                                <li><a href="#">Store builder</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Mobile commerce</a></li>
+                                <li><a href="#">Dropshipping</a></li>
+                                <li><a href="#">Website development</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Point of sale</a></li>
+                                <li><a href="#">Hardware</a></li>
+                                <li><a href="#">Software</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- Portfolio Modal 4 -->
-<div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="portfolioModal4Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-            </button>
-            <div class="modal-body text-center">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <!-- Portfolio Modal - Title -->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Controller</h2>
-                            <!-- Icon Divider -->
-                            <div class="divider-custom">
-                                <div class="divider-custom-line"></div>
-                                <div class="divider-custom-icon">
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="divider-custom-line"></div>
-                            </div>
-                            <!-- Portfolio Modal - Image -->
-                            <img class="img-fluid rounded mb-5" src={{asset("img/portfolio/game.png")}} alt="">
-                            <!-- Portfolio Modal - Text -->
-                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            <button class="btn btn-primary" href="#" data-dismiss="modal">
-                                <i class="fas fa-times fa-fw"></i>
-                                Close Window
-                            </button>
-                        </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="block-5 mb-5">
+                        <h3 class="footer-heading mb-4">Contact Info</h3>
+                        <ul class="list-unstyled">
+                            <li class="address">203 Fake St. Mountain View, San Francisco, California, USA</li>
+                            <li class="phone"><a href="tel://23923929210">+2 392 3929 210</a></li>
+                            <li class="email">emailaddress@domain.com</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-
-<!-- Portfolio Modal 5 -->
-<div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-labelledby="portfolioModal5Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-            </button>
-            <div class="modal-body text-center">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <!-- Portfolio Modal - Title -->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Locked Safe</h2>
-                            <!-- Icon Divider -->
-                            <div class="divider-custom">
-                                <div class="divider-custom-line"></div>
-                                <div class="divider-custom-icon">
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="divider-custom-line"></div>
-                            </div>
-                            <!-- Portfolio Modal - Image -->
-                            <img class="img-fluid rounded mb-5" src={{("img/portfolio/safe.png")}} alt="">
-                            <!-- Portfolio Modal - Text -->
-                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            <button class="btn btn-primary" href="#" data-dismiss="modal">
-                                <i class="fas fa-times fa-fw"></i>
-                                Close Window
-                            </button>
-                        </div>
-                    </div>
+            <div class="row pt-5 mt-5 text-center">
+                <div class="col-md-12">
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
                 </div>
+
             </div>
         </div>
-    </div>
+    </footer>
 </div>
 
-<!-- Portfolio Modal 6 -->
-<div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-            </button>
-            <div class="modal-body text-center">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <!-- Portfolio Modal - Title -->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Submarine</h2>
-                            <!-- Icon Divider -->
-                            <div class="divider-custom">
-                                <div class="divider-custom-line"></div>
-                                <div class="divider-custom-icon">
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="divider-custom-line"></div>
-                            </div>
-                            <!-- Portfolio Modal - Image -->
-                            <img class="img-fluid rounded mb-5" src={{asset("img/portfolio/submarine.png")}} alt="">
-                            <!-- Portfolio Modal - Text -->
-                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            <button class="btn btn-primary" href="#" data-dismiss="modal">
-                                <i class="fas fa-times fa-fw"></i>
-                                Close Window
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<script src={{asset("js/jquery-3.3.1.min.js")}}></script>
+<script src={{asset("js/jquery-ui.js")}}></script>
+<script src={{asset("js/popper.min.js")}}></script>
+<script src={{asset("js/bootstrap.min.js")}}></script>
+<script src={{asset("js/owl.carousel.min.js")}}></script>
+<script src={{asset("js/jquery.magnific-popup.min.js")}}></script>
+<script src={{asset("js/aos.js")}}></script>
 
-<!-- Bootstrap core JavaScript -->
-<script src={{asset('js/jquery.min.js')}}></script>
-<script src={{asset('js/bootstrap.bundle.min.js')}}></script>
-
-<!-- Plugin JavaScript -->
-<script src={{asset('jquery-easing/jquery.easing.min.js')}}></script>
-
-<!-- Contact Form JavaScript -->
-<script src={{asset('js/jqBootstrapValidation.js')}}></script>
-<script src={{asset('js/contact_me.js')}}></script>
-
-<!-- Custom scripts for this template -->
-<script src={{asset('js/freelancer.min.js')}}></script>
+<script src={{asset("js/main.js")}}></script>
 
 </body>
-
 </html>

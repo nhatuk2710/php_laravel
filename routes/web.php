@@ -13,8 +13,13 @@ Route::get("dang-nhap","WebController@login");
 Route::get("/","WebController@home");
 
 //day la trang san pham
-Route::get("product","WebController@product");
+Route::get("/product/{id}","WebController@product");
 
 //Day la danh sach san pham
-Route::get("/list","WebController@danhmuc");
-Route::get("/list-product/{id}","WebController@listproduct");
+
+
+Route::get("/listproduct","WebController@listproduct");
+//Day la trang san pham theo danh muc cate
+Route::get("/cate/{id}","WebController@categorypr");
+//Day la trang san pham theo danh muc brand
+Route::get("/brandpr/{id}","WebController@brands");
