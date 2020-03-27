@@ -130,11 +130,11 @@
                         <div class="products-wrap border-top-0">
                             <div class="container-fluid">
                                 <div class="row no-gutters products">
-                                    @foreach($brands->Products->take(6) as $b)
+                                    @foreach($brands->Product->take(6) as $b)
                                         <div class="col-6 col-md-6 col-lg-6 border-top">
                                             <a href="product.blade.php" class="item">
                                                 <a href="{{url("/product/{$b->id}")}}">
-                                                    <img src="{{asset("images/product_1.jpg")}} alt="Image" class="img-fluid">
+                                                    <img src="{{asset("images/product_1.jpg")}}" alt="Image" class="img-fluid">
                                                 </a>
                                                 <div class="item-info">
                                                     <h3>{{$b->product_name}}</h3>

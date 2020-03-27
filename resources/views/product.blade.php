@@ -42,7 +42,7 @@
         <div class="d-flex align-items-center justify-content-between">
           <div class="logo">
             <div class="site-logo">
-              <a href="home.blade.php" class="js-logo-clone">Dealers</a>
+              <a href="{{url("/")}}" class="js-logo-clone">Dealers</a>
             </div>
           </div>
           <div class="main-nav d-none d-lg-block">
@@ -107,7 +107,8 @@
           <div class="col-md-6">
             <h2 class="text-black">{{$product->product_name}}</h2>
             <p>{{$product->product_desc}}</p>
-            <p class="mb-4">{{$product->product_desc}}</p>
+            <p class="mb-4">Danh muc :{{$product->Category->category_name}}</p>
+            <p class="mb-4">Thuong hieu :{{$product->Brand->brand_name}}</p>
             <p><strong class="text-primary h4">{{$product->price}}</strong></p>
             <div class="mb-1 d-flex">
               <label for="option-sm" class="d-flex mr-3 mb-3">

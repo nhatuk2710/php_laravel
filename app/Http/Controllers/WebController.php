@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use App\Brand;
@@ -31,6 +32,7 @@ class WebController extends Controller
 
     public function listproduct(){
         $listproduct = Product::all()->take(6);
+
         return view('listproduct',['listproduct'=>$listproduct]);
     }
 
@@ -53,6 +55,10 @@ class WebController extends Controller
             "quantity"=>$product->quantity-1
         ]);
         return redirect()->to("product/{$product->id}");
+    }
+
+    public function filter($c_id,$b_id){
+        $products = Product::where('category_id',$c_id)->where('brand_id',$b_id)->get();
     }
 
 }

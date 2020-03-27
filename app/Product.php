@@ -10,11 +10,11 @@ class Product extends Model
 
     protected $fillable =['product_name','product_desc','thumbnail','price','quantity','gallery','category_id','brand_id'];
 
-    public function Categories(){
+    public function Category(){
         return $this->belongsTo("\App\Category");
     }
 
-    public function Brands(){
+    public function Brand(){
         return $this->belongsTo("\App\Brand");
     }
 }

@@ -1,4 +1,5 @@
 <?php
+//AdminController.php
 
 use Illuminate\Support\Facades\Route;
 

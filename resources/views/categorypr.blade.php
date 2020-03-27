@@ -128,7 +128,7 @@
                         <div class="products-wrap border-top-0">
                             <div class="container-fluid">
                                 <div class="row no-gutters products">
-                                    @foreach($category->Products->take(10) as $t)
+                                    @foreach($category->Product->take(10) as $t)
                                         <div class="col-6 col-md-6 col-lg-6 border-top">
                                             <a href="product.blade.php" class="item">
                                                 <a href="{{url("/product/{$t->id}")}}">
@@ -136,6 +136,7 @@
                                                 </a>
                                                 <div class="item-info">
                                                     <h3>{{$t->product_name}}</h3>
+{{--                                                    <p>Thuong hieu :{{$product->Brand->brand_name}}</p>--}}
                                                     <span class="collection d-block">Summer Collection</span>
                                                     <strong class="price">{{$t->price}}</strong>
                                                 </div>
